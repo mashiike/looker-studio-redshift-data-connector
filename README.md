@@ -1,0 +1,1 @@
+# looker-studio-redshift-data-connector
