@@ -1,0 +1,3 @@
+config.tf
+.terraform
+.envrc

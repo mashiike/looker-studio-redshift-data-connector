@@ -1,0 +1,21 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "runtimeVersion": "V8",
+  "exceptionLogging": "STACKDRIVER",
+  "dataStudio": {
+    "name": "Redshift Data API",
+    "company": "mashiike",
+    "companyUrl": "https://github.com/mashiike",
+    "logoUrl": "https://raw.githubusercontent.com/mashiike/looker-studio-redshift-data-connector/master/logo.png",
+    "addonUrl": "https://github.com/mashiike/looker-studio-redshift-data-connector",
+    "supportUrl": "https://github.com/mashiike/looker-studio-redshift-data-connector/issues",
+    "description": "Get data from Redshift Data API",
+    "sources": [
+      "redshift"
+    ]
+  },
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/userinfo.email",
+    "https://www.googleapis.com/auth/script.external_request"
+  ]
+}

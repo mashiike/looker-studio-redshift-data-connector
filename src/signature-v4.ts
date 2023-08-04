@@ -70,7 +70,7 @@ export class Signature {
     });
   }
 
-  headers(h: { [key: string]: string }): string {
+  headers(h: {[key: string]: string}): string {
     return Object.keys(h)
       .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
       .reduce((acc, k) => {
@@ -79,7 +79,7 @@ export class Signature {
       }, '');
   }
 
-  signedHeaders(h: { [key: string]: string }): string {
+  signedHeaders(h: {[key: string]: string}): string {
     return Object.keys(h)
       .sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1))
       .reduce((acc, k) => {
@@ -92,7 +92,7 @@ export class Signature {
       }, '');
   }
 
-  query(q: { [key: string]: string | number | boolean }): string {
+  query(q: {[key: string]: string | number | boolean}): string {
     return Object.entries(q)
       .sort((a, b) => (a[0] < b[0] ? -1 : 1))
       .reduce((acc, [key, value]) => {
@@ -105,10 +105,8 @@ export class Signature {
       }, '');
   }
 
-  sign(
-    signingDate: Date,
-    request: { [key: string]: any } // eslint-disable-line @typescript-eslint/no-explicit-any
-  ) {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  sign(signingDate: Date, request: {[key: string]: any}): {[key: string]: any} {
     const dateStringFull = this.dateStringFull(signingDate);
     const dateStringShort = this.dateStringShort(signingDate);
 
@@ -157,6 +155,13 @@ export class Signature {
     request.headers[
       'Authorization'
     ] = `${algorithm} Credential=${this.access_key_id}/${scope}, SignedHeaders=${signedHeaders}, Signature=${signature}`;
+    request.headers = Object.assign(
+      request.headers,
+      request['unsingedHeaders']
+    );
+    delete request.headers['unsingedHeaders'];
+    delete request.headers['host'];
     return request;
   }
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 }

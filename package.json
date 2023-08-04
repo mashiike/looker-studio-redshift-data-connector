@@ -1,0 +1,52 @@
+{
+  "scripts": {
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "build": "node ./build.js",
+    "deploy": "npm run build && clasp push",
+    "lint": "gts lint",
+    "fix": "gts fix",
+    "clean": "gts clean",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@aws-crypto/sha256-js": "^5.0.0",
+    "@aws-sdk/signature-v4": "^3.374.0",
+    "@google/clasp": "^2.1.0",
+    "@types/crypto-js": "^4.1.1",
+    "@types/google-apps-script": "^1.0.65",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.5",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.18.17",
+    "esbuild-gas-plugin": "^0.6.0",
+    "esbuild-plugin-copy": "^2.1.1",
+    "gts": "^5.0.0",
+    "jest": "^29.6.2",
+    "prettier": "^3.0.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "~5.1.6"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "^@/(.+)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.ts$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.json"
+        }
+      ]
+    },
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ]
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
+  }
+}
