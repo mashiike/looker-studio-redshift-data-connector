@@ -1,4 +1,4 @@
-# LookerStudio RedshiftDataA Connector
+# LookerStudio RedshiftDataAPI Connector
 
 ## Overview
 
