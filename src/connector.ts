@@ -524,7 +524,6 @@ export function getData(
         }
         return '';
       });
-      console.log(row);
       resp.addRow(row);
     });
     fetchParams.NextToken = fetchResp.NextToken;
