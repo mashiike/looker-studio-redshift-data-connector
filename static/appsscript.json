@@ -6,7 +6,7 @@
     "name": "Redshift Data API",
     "company": "mashiike",
     "companyUrl": "https://github.com/mashiike",
-    "logoUrl": "https://raw.githubusercontent.com/mashiike/looker-studio-redshift-data-connector/master/logo.png",
+    "logoUrl": "https://raw.githubusercontent.com/mashiike/looker-studio-redshift-data-connector/main/logo.png",
     "addonUrl": "https://github.com/mashiike/looker-studio-redshift-data-connector",
     "supportUrl": "https://github.com/mashiike/looker-studio-redshift-data-connector/issues",
     "description": "Get data from Redshift Data API",
